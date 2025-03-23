@@ -1,10 +1,10 @@
 import time
 import pandas as pd
 import numpy as np
-
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+
 def get_filters():
     """ 
     Asks user to specify a city, month, and day to analyze. 
@@ -20,10 +20,12 @@ def get_filters():
     # HINT: Use a while loop to handle invalid inputs
     while True:
         try:
+            # Ask the user to choose a city
             city = input('Please choose a city from these (chicago, new york city, washington): ').strip().lower()
+            # Check if the input city is valid
             if city in ['chicago', 'new york city', 'washington']:
                 print(f"You selected: {city}")
-                break
+                break  # Exit loop if valid city is selected
             else:
                 print("Invalid city, please choose from chicago, new york city, washington.")
         except Exception as e:
@@ -32,10 +34,12 @@ def get_filters():
     # Get user input for month (all, january, february, ... , june)
     while True:
         try:
+            # Ask the user to choose a month
             month = input('Please enter a month (All, January, February, ... June): ').strip().lower()
+            # Check if the input month is valid
             if month in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
                 print(f"You selected: {month.capitalize()}")
-                break
+                break  # Exit loop if valid month is selected
             else:
                 print("Invalid month, please enter a valid month.")
         except Exception as e:
@@ -44,20 +48,23 @@ def get_filters():
     # Get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         try:
+            # Ask the user to choose a day of the week
             day = input('Please enter a day of the week (All, Monday, Tuesday, ... Sunday): ').strip().lower()
+            # Check if the input day is valid
             if day in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
                 print(f"You selected: {day.capitalize()}")
-                break
+                break  # Exit loop if valid day is selected
             else:
                 print("Invalid day, please enter a valid day of the week (All, Monday, Tuesday, ... Sunday).")
         except Exception as e:
             print(f"An error occurred: {e}. Please try again.")
 
-
-
-
+    # Print a separator line to improve readability
     print('-'*40)
+
+    # Return the user's selections (city, month, day)
     return city, month, day
+
 #-------------------------------------------------------------
 def load_data(city, month, day):
     """
