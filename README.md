@@ -4,13 +4,17 @@
 Include the date you created this project and README file.
 
 ### Project Title
-Replace the Project Title
+bikeShare1.py
 
 ### Description
-Describe what your project is about and what it does
+In this project, I used Python to analyze data from bike-sharing systems in three major cities in the U.S.—Chicago, New York City, and Washington. I wrote code to load the data and calculate key statistics about bike usage. Additionally, I created a Python script that allows users to interact with the program by entering input (such as city, month, or day) to view specific statistics in the terminal
 
 ### Files used
-Include the files used
+bikeShare1.py
+chicago.csv
+new_york_city.csv
+washington.csv
+
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
